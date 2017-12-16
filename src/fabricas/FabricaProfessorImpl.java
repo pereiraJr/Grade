@@ -11,7 +11,7 @@ public class FabricaProfessorImpl implements FabricaProfessor{
 		Professor professor = new Professor();
 		professor.setNome(nome);
 		professor.setLimiteCargaHoraria(cargaHoraria);
-		professor.setPortifolioDisciplina(portifolioDisciplina);
+		professor.setPortifolioDisciplinas(portifolioDisciplina);
 		return professor;
 	}
 

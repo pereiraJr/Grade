@@ -6,18 +6,10 @@ import java.util.List;
 public class Professor {
 
 	private String nome;
-	List<Disciplina> portifolioDisciplina = new ArrayList<>();
-	List<Disciplina> disciplina = new ArrayList<>();
-
-	public List<Disciplina> getPortifolioDisciplina() {
-		return portifolioDisciplina;
-	}
-
-	public void setPortifolioDisciplina(List<Disciplina> portifolioDisciplina) {
-		this.portifolioDisciplina = portifolioDisciplina;
-	}
-
+	private List<Disciplina> portifolioDisciplinas = new ArrayList<>();
+	private List<Disciplina> disciplinas = new ArrayList<>();
 	private int limiteCargaHoraria;
+
 
 	public int getLimiteCargaHoraria() {
 		return limiteCargaHoraria;
@@ -35,12 +27,22 @@ public class Professor {
 		this.nome = nome;
 	}
 
-	public List<Disciplina> getDisciplina() {
-		return disciplina;
+	public List<Disciplina> getPortifolioDisciplinas() {
+		return portifolioDisciplinas;
 	}
 
-	public void setDisciplina(List<Disciplina> disciplina) {
-		this.disciplina = disciplina;
+	public void setPortifolioDisciplinas(List<Disciplina> portifolioDisciplinas) {
+		this.portifolioDisciplinas = portifolioDisciplinas;
 	}
+
+	public List<Disciplina> getDisciplinas() {
+		return disciplinas;
+	}
+
+	public void setDisciplinas(List<Disciplina> disciplinas) {
+		this.disciplinas = disciplinas;
+	}
+	
+	
 
 }

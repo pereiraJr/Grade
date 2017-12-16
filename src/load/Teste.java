@@ -64,9 +64,9 @@ public class Teste {
 
 		for (Professor professor : listaProfessores) {
 			int i = 0;
-			while (professor.getDisciplina().isEmpty() && listaDisciplina.size() > i) {
+			while (professor.getDisciplinas().isEmpty() && listaDisciplina.size() > i) {
 				if (professor.getLimiteCargaHoraria() >= listaDisciplina.get(i).getCargaHoraria()) {
-					professor.getDisciplina().add(listaDisciplina.remove(i));
+					professor.getDisciplinas().add(listaDisciplina.remove(i));
 				} else {
 					i++;
 				}
@@ -76,22 +76,20 @@ public class Teste {
 		System.out.println("Data de Geração ementa: " + hoje);
 		for (Professor professor : listaProfessores) {
 			System.out.println("Professor: " + professor.getNome());
-			professor.getDisciplina()
-			.forEach(disciplina -> System.out.println(disciplina.getNome()));
+			professor.getDisciplinas().forEach(disciplina -> System.out.println(disciplina.getNome()));
 
 		}
-		
+
 		System.out.println("\n\nDisciplinas Pendentes: ");
 		listaDisciplina.stream().forEach(disciplina -> System.out.println(disciplina.getNome()));
 
 		profHoraMaiorQue30(listaProfessores);
-				
+
 	}
 
 	private static void profHoraMaiorQue30(List<Professor> listaProfessores) {
 		Stream<Professor> contadorStream = listaProfessores.stream();
-		List<Professor> list = listaProfessores.stream()
-				.filter(professores -> professores.getLimiteCargaHoraria() > 30)
+		List<Professor> list = listaProfessores.stream().filter(professores -> professores.getLimiteCargaHoraria() > 30)
 				.collect(Collectors.toList());
 		System.out.println("Professores com Cargahoraria maior que 30 : " + contadorStream.count());
 	}
